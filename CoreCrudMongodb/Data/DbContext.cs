@@ -13,7 +13,7 @@ namespace CoreCrudMongodb.Data
 
         public DbContext()
         {
-            db = new MongoClient("mongodb://localhost:27017").GetDatabase("CoreCrudMongodb");
+            db = new MongoClient("mongodb://localhost:27017").GetDatabase("Sdb");
         }
 
         public void Seed()
@@ -23,37 +23,20 @@ namespace CoreCrudMongodb.Data
             {
                 var newCustomers = new List<Customer>();
 
-                newCustomers.Add(new Customer() {
-                    State = "New York",
-                    City = "New York City",
-                    Country = "United States",
-                    Email = "james@outlook.com",
-                    FirstName = "James",
-                    LastName = "Roth",
-                    Street = "W Broadway"
-                });
+               
 
                 newCustomers.Add(new Customer()
                 {
-                    State = "Texas",
+                 
                     City = "El Passo",
                     Country = "United States",                
                     Email = "john@outlook.com",
-                    FirstName = "John",
-                    LastName = "Lee",
+                    Name = "John",
+               
                     Street = "Memphis Ave"
                 });
 
-                newCustomers.Add(new Customer()
-                {
-                    State = "California",
-                    City = "Los Angeles",
-                    Country = "United States",
-                    Email = "edgar@outlook.com",
-                    FirstName = "Edgar",
-                    LastName = "Talese",
-                    Street = "S Spring"
-                });
+             
                 this.Customers.InsertMany(newCustomers);
 
             }

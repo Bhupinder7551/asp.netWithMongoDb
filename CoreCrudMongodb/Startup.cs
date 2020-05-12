@@ -33,6 +33,12 @@ namespace CoreCrudMongodb
             services.AddTransient<DbContext>();
             services.AddTransient<ICustomerRepository, CustomerRepository>();
             services.AddTransient<ICustomerService, CustomerService>();
+
+            new DbContextEmp().SeedEmp();
+
+            services.AddTransient<DbContextEmp>();
+            services.AddTransient<IEmployeeRepository, EmployeeRepository>();
+            services.AddTransient<IEmployeeService, EmployeeService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -1,0 +1,42 @@
+﻿@model List<Employee>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Hello from Employee Controller</h2>
+
+
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h2>Employee</h2>
+            <span>List of employee </span><a data-toggle="tooltip" data-placement="top" title="Create" class="btn btn-danger btn-icon" asp-action="Create"><i class="ion-plus"></i></a>
+        </div>
+        <div class="card-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Country</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Name</td>
+                            <td>@item.Country</td>
+                            <td>
+                                <a data-toggle="tooltip" data-placement="top" title="Edit" class="btn btn-danger btn-icon" asp-action="Edit" asp-route-id="@item.Id"><i class="ion-edit"></i></a>
+                                <a data-toggle="tooltip" data-placement="top" title="Remove" class="btn btn-danger btn-icon" asp-action="Delete" asp-route-id="@item.Id"><i class="ion-trash-a"></i></a>
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

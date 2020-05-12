@@ -1,4 +1,4 @@
-﻿@model Customer
+﻿@model Employee
 @{
     ViewData["Title"] = "Index";
 }
@@ -6,40 +6,25 @@
 <div class="container">
     <div class="card">
         <div class="card-header">
-            <h2>Customer</h2>
-            <span>Data of Customer </span>
+            <h2>Employee</h2>
+            <span>Data of Employee </span>
         </div>
         <div class="card-body">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <form asp-action="Update" method="post" asp-antiforgery="true">
                 <input type="hidden" name="Id" value="@Model.Id" />
                 <div class="form-group">
-                    <label>First Name</label>
-                    <input type="text" class="form-control" name="FirstName" value="@Model.Name" />
+                    <label>Name</label>
+                    <input type="text" class="form-control" name="Name" value="@Model.Name" />
                     <span asp-validation-for="Name" class="text-danger"></span>
                 </div>
-            
-                <div class="form-group">
-                    <label>Street</label>
-                    <input type="text" class="form-control" name="Street" value="@Model.Street" />
-                    <span asp-validation-for="Street" class="text-danger"></span>
-                </div>
+
                 <div class="form-group">
                     <label>Country</label>
                     <input type="text" class="form-control" name="Country" value="@Model.Country" />
                     <span asp-validation-for="Country" class="text-danger"></span>
                 </div>
-             
-                <div class="form-group">
-                    <label>City</label>
-                    <input type="text" class="form-control" name="City" value="@Model.City" />
-                    <span asp-validation-for="City" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label>Email</label>
-                    <input type="text" class="form-control" name="Email" value="@Model.Email" />
-                    <span asp-validation-for="Email" class="text-danger"></span>
-                </div>
+
                 <div class="form-group">
                     <div class="row">
                         <div class="col-md-3 offset-md-8 col-sm-12"><button class="btn btn-danger btn-block" type="submit" title="Save">Save</button></div>

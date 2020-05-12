@@ -41,10 +41,8 @@ namespace CoreCrudMongodb.Data.Repositories
                     .Set(x => x.City, customer.City)
                     .Set(x => x.Country, customer.Country)
                     .Set(x => x.Email, customer.Email)
-                    .Set(x => x.FirstName, customer.FirstName)
-                    .Set(x => x.LastName, customer.LastName)
-                    .Set(x => x.State, customer.State)
-                    .Set(x => x.Street, customer.Street);                    
+                    .Set(x => x.Name, customer.Name)
+                    .Set(x => x.Street, customer.Street);
                 dbContext.Customers.UpdateOne(filter, update);
             }
             else
